@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/FloorPlan1_physics.unity
     guid: f6bb3645e5f82439f9b3d3a05df01528
+  - enabled: 1
+    path: Assets/Scenes/FloorPlan1_physics_CALM.unity
+    guid: e4ed7d5c73860f844a78b4aaf2e443eb
   - enabled: 1
     path: Assets/Scenes/FloorPlan2_physics.unity
     guid: a5adff71cdb2b9d4ca40b1ae3c5b8261

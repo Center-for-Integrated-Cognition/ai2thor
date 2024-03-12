@@ -744,14 +744,17 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Analytics: 0
+    Analytics: 1
     Build: 0
     Collab: 0
     ErrorHub: 0
+    Game Performance: 0
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 1
     Unity_Ads: 0
   luminIcon:
     m_Name: 
@@ -766,11 +769,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 42a6290f-05e5-422a-af5d-26e4e8e4c6ee
+  cloudProjectId: 4c2eb5bd-e1cd-4976-b7cb-c2917fee269f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: AI2-THOR (4)
+  organizationId: jimbeyer
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   virtualTexturingSupportEnabled: 0

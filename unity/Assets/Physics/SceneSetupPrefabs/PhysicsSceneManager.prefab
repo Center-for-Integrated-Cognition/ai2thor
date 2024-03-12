@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114699917896503758}
   - component: {fileID: 1277749598}
   - component: {fileID: 581457429757738957}
+  - component: {fileID: 1075538937285582012}
   m_Layer: 0
   m_Name: PhysicsSceneManager
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdadd703a175436c99f8c512bf98ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProceduralMode: 0
   RequiredObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -114,7 +116,7 @@ MonoBehaviour:
   ManipulatorReceptacles: []
   ManipulatorBooks: []
   AllowDecayTemperature: 1
-  agentManager: {fileID: 114125549759153004}
+  agentManager: {fileID: 0}
   physicsSimulationPaused: 0
   isSceneAtRest: 0
   AdvancePhysicsStepCount: 0
@@ -130,10 +132,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6582ead04e3334ebfb57f9b51cd8c705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tex: {fileID: 0}
+  readPixelsRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
   thirdPartyCameras: []
   actionDuration: 3
   doResetMaterials: 0
   doResetColors: 0
+  agentMode: 
   sceneBounds:
     m_Center: {x: Infinity, y: Infinity, z: Infinity}
     m_Extent: {x: -Infinity, y: -Infinity, z: -Infinity}
@@ -244,3 +254,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: b7babe292cedd6644bb0e057878a58c4, type: 2}
   - {fileID: 2100000, guid: 8d07f44645275464fa8e0a0a82043dfb, type: 2}
   - {fileID: 2100000, guid: a426c8270276e6f46b8f83b927bfe225, type: 2}
+--- !u!195 &1075538937285582012
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094466206569480}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
