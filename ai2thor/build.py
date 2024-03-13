@@ -90,7 +90,7 @@ class ExternalBuild(object):
 
 
 class Build(object):
-    def __init__(self, platform, commit_id, include_private_scenes, releases_dir=None):
+    def __init__(self, platform, commit_id, include_private_scenes, releases_dir=None, cic_fork=True):
 
         if type(platform) is str:
             if platform in STR_PLATFORM_MAP:
@@ -103,6 +103,7 @@ class Build(object):
         self.include_private_scenes = include_private_scenes
         self.releases_dir = releases_dir
         self.tmp_dir = None
+        self.cic_fork = cic_fork
 
         if self.releases_dir:
             self.tmp_dir = os.path.normpath(self.releases_dir + "/../tmp")
@@ -192,6 +193,8 @@ class Build(object):
 
     @property
     def url(self):
+        if self.cic_fork:
+            return "https://github.com/Center-for-Integrated-Cognition/ai2thor/releases/download/5.0.0-Windows/ai2thor_windows.zip"
         return self._base_url() + os.path.join("builds", self.name + ".zip")
 
     @property
