@@ -13,7 +13,7 @@ In addition to having the project dependencies installed, also `pip install invo
 Update the `url` property for the case where `cic_fork=True` in build.py. You'll need to choose a new tag name for the release.
 
 Make sure everything you want is committed and pushed.
-Build the wheel with `invoke build-pip-commit`. Upload that wheel to the release.
+Build the wheel with `invoke build-pip-commit`. Upload that `.whl` file located under `dist/` to the release.
 
 Build the `unity` subproject. Currently we then manually edit the zip to be the expected structure, but we should look into using `invoke ci-build` to properly structure it. Manual steps:
 
