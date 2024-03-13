@@ -8,7 +8,7 @@ We will send PR's upstream for changes that may be relevant to others, but many 
 
 See also the original readme [here](./README.md).
 
-In addition to having the project dependencies installed, also `pip install invoke`.
+In addition to having the project dependencies installed, also `pip install invoke wheel`.
 
 Update the `url` property for the case where `cic_fork=True` in build.py. You'll need to choose a new tag name for the release.
 
