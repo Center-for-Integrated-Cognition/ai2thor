@@ -270,7 +270,8 @@ public enum SimObjType : int {
     Doorway = 163,
     WashingMachine = 164,
     ClothesDryer = 165,
-    Doorframe = 166
+    Doorframe = 166,
+    Carrot = 167
 }
 
 public static class ReceptacleRestrictions {
@@ -406,6 +407,11 @@ public static class ReceptacleRestrictions {
         {SimObjType.Box, SimObjType.Dresser, SimObjType.Desk, SimObjType.Toilet, SimObjType.Cart, SimObjType.Bathtub, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop,
          SimObjType.Shelf, SimObjType.Drawer, SimObjType.Stool, SimObjType.Chair
         }},
+
+        // CARROT
+		{SimObjType.Carrot, new List<SimObjType>()
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
 
 		// CD
 		{SimObjType.CD, new List<SimObjType>()
