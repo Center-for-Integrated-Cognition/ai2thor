@@ -15,7 +15,7 @@ def download(url, sha256_digest, include_private_scenes=False):
         auth = ai2thor.build.boto_auth()
 
     logger.debug("Downloading file from %s" % url)
-    r = requests.get(url, stream=True, auth=auth)
+    r = requests.get(url, stream=True, auth=auth, allow_redirects=True)
     r.raise_for_status()
     size = int(r.headers["Content-Length"].strip())
     total_bytes = 0

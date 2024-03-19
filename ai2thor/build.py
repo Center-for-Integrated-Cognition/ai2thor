@@ -226,12 +226,12 @@ class Build(object):
 
     def exists(self):
         return (self.releases_dir and os.path.isdir(self.base_dir)) or (
-            requests.head(self
+            requests.head(self.url
             , auth=self.auth(), allow_redirects=True).status_code == 200
         )
 
     def log_exists(self):
-        return requests.head(self.log_url, auth=self.auth()).status_code == 200
+        return requests.head(self.log_url, auth=self.auth(), allow_redirects=True).status_code == 200
 
     def sha256(self):
         res = requests.get(self.sha256_url, auth=self.auth(), allow_redirects=True)
