@@ -23,12 +23,13 @@ Build the `unity` subproject. Currently we then manually edit the zip to be the 
 {"server_types": ["WSGI", "FIFO"]}
 ```
 
-* top-level directory should be named `thor-<platform>-<commit sha1>`
+* There should be no top-level directory inside of the zip. The zip should directly contain each of the required build files.
 * data directory should be named `thor-<platform>-<commit sha1>_Data`
-* executable should be named `thor-<platform>-<commit sha1>`
-    - TODO: Windows doesn't need a .exe, does it?
+* executable should be named `thor-<platform>-<commit sha1>` (with `.exe` on Windows)
 
-Upload the resulting zip to the release on GitHub. Double-check that you've matched the download URL specified in build.py in the previous step. Double-check that the commit sha1 in the zip name matches the commit sha1 in the wheel name.
+Note that the platform name for Windows is `StandaloneWindows64`.
+
+Upload the resulting zip to the release on GitHub. Double-check that you've matched the download URL specified in build.py in the previous step. Double-check that the commit sha1 in the zip name matches the commit sha1 in the wheel name. If on a Mac, remove the `__MACOSX` directory from the zip file with `zip -d <zip file> __MACOSX/\*` (failing to do so will result in errors when the user downloads the zip).
 
 Place the sha256 of the zip file in a text file and upload that to the release as well. It should have the same name as the zip file, but with the extension changed to `.sha256`. Quick snippet for generating the sha256:
 
