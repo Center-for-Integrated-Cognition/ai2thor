@@ -30,4 +30,6 @@ Build the `unity` subproject. Currently we then manually edit the zip to be the 
 
 Upload the resulting zip to the release on GitHub. Double-check that you've matched the download URL specified in build.py in the previous step. Double-check that the commit sha1 in the zip name matches the commit sha1 in the wheel name.
 
+Place the sha256 of the zip file in a text file and upload that to the release as well. It should have the same name as the zip file, but with the extension changed to `.sha256`.
+
 Tell users to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
