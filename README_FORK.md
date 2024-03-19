@@ -25,7 +25,7 @@ Build the `unity` subproject. Currently we then manually edit the zip to be the 
 
 * There should be no top-level directory inside of the zip. The zip should directly contain each of the required build files.
 * data directory should be named `thor-<platform>-<commit sha1>_Data`
-* executable should be named `thor-<platform>-<commit sha1>` (no `.exe`!)
+* executable should be named `thor-<platform>-<commit sha1>` (with `.exe` on Windows)
 
 Note that the platform name for Windows is `StandaloneWindows64`.
 
