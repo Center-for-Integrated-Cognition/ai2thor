@@ -72,3 +72,56 @@ TODO
 ### Adding/Editing Objects
 
 TODO
+
+## Debugging in Unity
+
+From Luca Weihs (not yet tested):
+
+0. Ensure you have AI2-THOR installed and that you have Flask==2.0.1 and Werkzeug==2.0.1 installed (using the correct versions of these requirements is important).
+1. Start the Unity editor and open any Unity scene (e.g. FloorPlan1_physics.unity)
+2. Initialize the Python controller with the parameters `start_unity=False`, `port=8200`, and `server_class=ai2thor.wsgi_server.WsgiServer`:
+ 
+```python
+controller = ai2thor.controller.Controller(
+        start_unity=False,
+        port=8200,
+        scene="FloorPlan1",
+        server_class=ai2thor.wsgi_server.WsgiServer,
+        visibilityScheme="Distance"
+    )
+```
+
+3. Press play in the Unity editor, Unity should now be connected to the Python server.
+4. Run all the commands from Python that you want.
+5. Call controller.stop() to unblock Unity.
+6. Depending on the os and the frame that you create your controller in (I'd scope it in a with) the socket port might be left bound so to unbound it, destruct the controller object or run lsof -ti:8200 | xargs kill -9 to unbind.
+ 
+Here's a quick script that will start a default agent in FloorPlan1 and then moves it a bit, let me know if you have any questions:
+ 
+```python
+import ai2thor
+import ai2thor.controller
+import ai2thor.wsgi_server
+import time
+ 
+print("Press play in the unity editor a second or two after this prints.")
+controller = ai2thor.controller.Controller(
+    start_unity=False,
+    port=8200,
+    height=300,
+    width=300,
+    gridSize=0.25,
+    scene="FloorPlan1",
+    server_class=ai2thor.wsgi_server.WsgiServer,
+    visibilityScheme="Distance"
+)
+ 
+print("Rotating left")
+controller.step("RotateLeft")
+time.sleep(1)
+ 
+print("Moving ahead 3 times")
+controller.step("MoveAhead")
+controller.step("MoveAhead")
+controller.step("MoveAhead")
+```
