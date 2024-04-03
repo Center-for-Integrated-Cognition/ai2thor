@@ -1,12 +1,16 @@
 # AI2THOR Fork for CIC usage
 
-This is a fork of [AI2THOR](https://github.com/allenai/ai2thor) for usage at CIC. Thus far the changes are minimal:
+This is a fork of [AI2THOR](https://github.com/allenai/ai2thor) for usage at CIC. We will send PR's upstream for changes that may be relevant to others, but many of the changes will be specific to our own research, particularly changes to assets.
+
+See also the original readme [here](./README.md).
+
+## Building for Windows
+
+We have an open PR with AI2 for fixing the Python code on Windows:
 
 * [Windows support](https://github.com/allenai/ai2thor/pull/1192)
 
-We will send PR's upstream for changes that may be relevant to others, but many of the changes will be specific to our own research, particularly changes to assets.
-
-See also the original readme [here](./README.md).
+However, even with these changes, AI2 will not distribute Windows builds. Therefore, we have to build our own Windows binaries.
 
 In addition to having the project dependencies installed, also `pip install invoke wheel`.
 
@@ -48,3 +52,23 @@ def sha256sum(filename):
 ```
 
 Tell users to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
+
+## Editing Scenes
+
+You'll need to follow the instructions the [unity subproject readme](./unity/README.md) to get the correct version of Unity setup. You can then edit the scenes in Unity and export them to the Python API. Note that if you are on Linux there is a shortcut to installing Unity Hub and the correct version of the Unity Editor:
+
+```bash
+pip install invoke
+invoke install_unity_hub
+invoke install_unity_editor
+```
+
+Once you have these installed, open Unity Hub and open the projects tab. Add the `unity` project, then double-click the project name to open the editor.
+
+### Creating New Scenes
+
+TODO
+
+### Adding/Editing Objects
+
+TODO
