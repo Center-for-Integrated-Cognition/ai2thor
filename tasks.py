@@ -134,16 +134,24 @@ def _unity_path():
 
     if sys.platform.startswith("darwin"):
         unity_hub_path = (
-            "/Applications/Unity/Hub/Editor/{}/Unity.app/Contents/MacOS/Unity".format(
-                unity_version
-            )
+            # TODO: This is the path on Nate's computer. Original line is below.
+            # Perhaps the path changes depending on whether multiple versions of Unity
+            # are installed or not?
+            "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub"
+            # "/Applications/Unity/Hub/Editor/{}/Unity.app/Contents/MacOS/Unity".format(
+            #     unity_version
+            # )
         )
         # /Applications/Unity/2019.4.20f1/Unity.app/Contents/MacOS
 
         standalone_path = (
-            "/Applications/Unity/{}/Unity.app/Contents/MacOS/Unity".format(
-                unity_version
-            )
+            # TODO: This is the path on Nate's computer. Original line is below.
+            # Perhaps the path changes depending on whether multiple versions of Unity
+            # are installed or not?
+            "/Applications/Unity/Unity.app/Contents/MacOS/Unity"
+            # "/Applications/Unity/{}/Unity.app/Contents/MacOS/Unity".format(
+            #     unity_version
+            # )
         )
         # standalone_path = (
         #     "/Applications/Unity-{}/Unity.app/Contents/MacOS/Unity".format(
@@ -3693,7 +3701,7 @@ def install_unity_hub(
     import requests
 
     if not sys.platform.startswith("linux"):
-        raise Exception("Installation only support for Linux")
+        raise Exception("Unity Hub installation only supported for Linux")
 
     res = requests.get(
         "https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage"
