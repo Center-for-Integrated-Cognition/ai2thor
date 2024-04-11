@@ -55,15 +55,34 @@ Tell users to `pip install -f <wheel url>`. When they import AI2THOR for the fir
 
 ## Editing Scenes
 
-You'll need to follow the instructions the [unity subproject readme](./unity/README.md) to get the correct version of Unity setup. You can then edit the scenes in Unity and export them to the Python API. Note that if you are on Linux there is a shortcut to installing Unity Hub and the correct version of the Unity Editor:
+### Unity Setup
+
+You'll need to follow the instructions the [unity subproject readme](./unity/README.md) to get the correct version of Unity setup. You can then edit the scenes in Unity and export them to the Python API. The download and installation steps are actually scripted for you, once you've installed the required Python dependencies:
 
 ```bash
 pip install invoke
-invoke install_unity_hub
-invoke install_unity_editor
+pip install boto3
+invoke install-unity-hub # Linux only, sorry; others need to install Unity Hub manually
+invoke install-unity-editor
 ```
 
-Once you have these installed, open Unity Hub and open the projects tab. Add the `unity` project, then double-click the project name to open the editor.
+Editor installation will open a window asking for you to accept the license agreement. The editor is quite large compared to the hub, so downloading it will take a while.
+
+Once you have these installed, you should open Unity Hub at least once and sign in with your Unity ID; failing to do this will cause Unity execution to fail later with errors about a missing license.
+
+To load the project, open Unity Hub and open the projects tab. Add the `unity` project, then double-click the project name to open the editor.
+
+### Building the unity Subproject
+
+Instructions for this are provided in [the unity subproject readme](./unity/README.md), but note that the default build architecture is OSX; for Linux you'll want to use this command instead:
+
+    invoke local-build --arch=Linux64
+
+The first time you run this, it may install some additional Unity components, requiring accepting of license agreements via popup windows.
+
+### Using your unity Build in the Python Connector
+
+Set the ai2_thor_local_executable_path variable in your config file to the path of the executable you built. This will be located under `unity/builds/thor-<platform>-local/...`.
 
 ### Creating New Scenes
 
