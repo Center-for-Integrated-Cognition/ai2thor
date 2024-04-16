@@ -53,36 +53,51 @@ def sha256sum(filename):
 
 Tell users to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
 
-## Editing Scenes
+## Working with Unity
 
 ### Unity Setup
 
-You'll need to follow the instructions the [unity subproject readme](./unity/README.md) to get the correct version of Unity setup. You can then edit the scenes in Unity and export them to the Python API. The download and installation steps are actually scripted for you, once you've installed the required Python dependencies:
+#### Linux
 
-```bash
-pip install invoke
-pip install boto3
-invoke install-unity-hub # Linux only, sorry; others need to install Unity Hub manually
-invoke install-unity-editor
-```
+Install Unity Hub via the instructions on the Unity website: https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux.
 
-Editor installation will open a window asking for you to accept the license agreement. The editor is quite large compared to the hub, so downloading it will take a while.
+Next you should load the project from Unity Hub. This will do 2 things for you:
 
-Once you have these installed, you should open Unity Hub at least once and sign in with your Unity ID; failing to do this will cause Unity execution to fail later with errors about a missing license.
+1) It will require you to input your Unity credentials, which will be saved for future use (such as building the project)
+2) It will install the correct version of the Unity editor for the project
 
-To load the project, open Unity Hub and open the projects tab. Add the `unity` project, then double-click the project name to open the editor.
+To load the project, open Unity Hub and open the projects tab. Add the `unity` sub-project found in this repo, then double-click the project name to open the editor.
 
-### Building the unity Subproject
+> GOTCHA: If your project loads with compile errors that have no message or source location, you won't be able to compile it, and I don't know how to fix this. The CALM machine is already set up, so you may wish to use that instead.
 
-Instructions for this are provided in [the unity subproject readme](./unity/README.md), but note that the default build architecture is OSX; for Linux you'll want to use this command instead:
+### Building the `unity` Subproject
 
-    invoke local-build --arch=Linux64
+#### Linux/CALM Machine
 
-The first time you run this, it may install some additional Unity components, requiring accepting of license agreements via popup windows.
+Depending on what Python environment you're using, you may need to install the project dependencies, as well as `invoke`:
+
+    pip install .
+    pip install invoke
+
+Now you can build using this command in the terminal:
+
+    invoke local-build --arch=Linux64 --no-batchmode
+
+This launches a Unity GUI with a progress bar while building the project. On a fresh checkout this might take 30 minutes. On a pre-existing project (as should be the case on the CALM machine!) this should be much faster.
+
+To monitor the build process in more detail, you may wish to open a separate terminal and tail the build log, which is output in the project root directory:
+
+    tail -f thor-Linux64-local.log
+
+> GOTCHA: running in batch mode, meaning without opening the Unity UI, currently fails on the CALM machine because we haven't been able to save Unity credentials in a keychain yet. Build in a remote desktop session and use `--no-batchmode` for now.
+
+>GOTCHA: If the build seems to hang forever with the Unity progress modal stating that it is "Building GI data," it may actually be stuck forever. It will time out eventually, after which time you can simply re-run the build and it should succeed. It might be okay to cancel the build when you see this happening, but I haven't tried that yet.
+
+The build will create many new `.meta` and `.mat` files. Please don't check these into git. TODO: can we `.gitignore` these? Or should we in fact be adding these to git?
 
 ### Using your unity Build in the Python Connector
 
-Set the ai2_thor_local_executable_path variable in your config file to the path of the executable you built. This will be located under `unity/builds/thor-<platform>-local/...`.
+Set the `ai2_thor_local_executable_path` variable in your config file to the path of the executable you built. This will be located under `<project root>/unity/builds/thor-<platform>-local/...`. The ITL-Agent repository's `rosie.config` already contains example configuration.
 
 ### Creating New Scenes
 
@@ -92,7 +107,7 @@ TODO
 
 TODO
 
-## Debugging in Unity
+### Debugging in Unity
 
 From Luca Weihs (not yet tested):
 
