@@ -185,6 +185,7 @@ def _build(
     env: Dict[str, str],
     timeout: int = 3600,
     print_interval: int = 60,
+    batchmode = True,
 ):
     project_path = os.path.join(os.getcwd(), unity_path)
     build_target_map = dict(OSXIntel64="OSXUniversal")
@@ -192,12 +193,13 @@ def _build(
     command = (
         f"{_unity_path()}"
         f" -quit"
-        f" -batchmode"
         f" -logFile {os.getcwd()}/{build_name}.log"
         f" -projectpath {project_path}"
         f" -buildTarget {build_target_map.get(arch, arch)}"
         f" -executeMethod Build.{arch}"
     )
+    if batchmode:
+        command += " -batchmode"
 
     target_path = os.path.join(build_dir, build_name)
 
@@ -484,8 +486,10 @@ def local_build_test(context, prefix="local", arch="OSXIntel64"):
 
 @task(iterable=["scenes"])
 def local_build(
-    context, prefix="local", arch="OSXIntel64", scenes=None, scripts_only=False
+    context, prefix="local", arch="OSXIntel64", batchmode=True, scenes=None, scripts_only=False
 ):
+    """If you have issues with the build timing out while trying to check the license, run in a desktop
+    environment and specify the --no-batchmode option. This will open a login window for Unity."""
     import ai2thor.controller
 
     build = ai2thor.build.Build(arch, prefix, False)
@@ -502,7 +506,7 @@ def local_build(
             map(ai2thor.controller.Controller.normalize_scene, scenes)
         )
 
-    if _build("unity", arch, build_dir, build.name, env=env):
+    if _build("unity", arch, build_dir, build.name, env=env, batchmode=batchmode):
         print("Build Successful")
     else:
         print("Build Failure")
