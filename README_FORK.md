@@ -80,6 +80,7 @@ To load the project, open Unity Hub and open the projects tab. Add the `unity` s
 
 Depending on what Python environment you're using, you may need to install the project dependencies, as well as `invoke`:
 
+    cd <ai2thor repository path>
     pip install .
     pip install invoke
 
