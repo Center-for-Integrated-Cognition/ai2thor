@@ -55,6 +55,10 @@ Tell users to `pip install -f <wheel url>`. When they import AI2THOR for the fir
 
 ## Working with Unity
 
+We can customize scenes a bit via configuration or by using procTHOR scenes (see the [THOR-Soar connector readme](https://github.com/Center-for-Integrated-Cognition/THOR-Soar/tree/main/connector#changing-the-scene-setup)). However, changes to iTHOR scenes (the nice-looking ones with lots of interactivity) that cannot be accomplished via agent actions require editing and building the `unity` project. This project generates the `AI2Thor` executable, which is called from Python and controls the Unity display window, physics simulation, etc.
+
+The instructions below assume that you have downloaded (or checked out) this repository next to the [THOR-Soar repository](https://github.com/Center-for-Integrated-Cognition/THOR-Soar) and, in CALM's case, also the [ITL-agent repository](https://github.com/Center-for-Integrated-Cognition/ITL-Agent).
+
 ### Unity Setup
 
 #### Linux
