@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FloorPlan1_ONR_Demo_3.unity
     guid: 448203b57056dc744928b51c1547a847
   - enabled: 1
+    path: Assets/Scenes/FloorPlan1_ONR_Demo_4.unity
+    guid: 3399224c72e118f44ba50402e5d0e4b9
+  - enabled: 1
     path: Assets/Scenes/FloorPlan1_physics_CALM.unity
     guid: ae0f2a4baa38ee84fa5c0388019a2bd0
   - enabled: 0
