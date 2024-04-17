@@ -82,6 +82,7 @@ Depending on what Python environment you're using, you may need to install the p
 
     cd <ai2thor repository path>
     pip install .
+    pip install boto3
     pip install invoke
 
 Now you can build using this command in the terminal:
