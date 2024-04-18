@@ -33902,13 +33902,13 @@ Transform:
   - {fileID: 1086921155}
   - {fileID: 1390973815}
   - {fileID: 1565581935}
+  - {fileID: 1451069113}
   - {fileID: 798292547}
   - {fileID: 14653867}
   - {fileID: 12635784}
   - {fileID: 74300590}
   - {fileID: 1532172613}
   - {fileID: 514307904}
-  - {fileID: 1451069113}
   - {fileID: 426235921}
   - {fileID: 1254538183}
   - {fileID: 1101016989}
@@ -41274,7 +41274,7 @@ Transform:
   m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children: []
   m_Father: {fileID: 1232419672}
-  m_RootOrder: 45
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1451069114
 MonoBehaviour:
@@ -41304,7 +41304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b439f6e4ef5714ee2a3643acf37b7a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: ColaCan|-00.48|+01.12|+00.11
+  objectID: Can|-00.48|+01.12|+00.11
   assetID: 
   Type: 169
   PrimaryProperty: 3
@@ -44240,15 +44240,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458023723049016, guid: 2f747246a56614a40af4a20baddb7da6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.911
+      value: -0.564
       objectReference: {fileID: 0}
     - target: {fileID: 4458023723049016, guid: 2f747246a56614a40af4a20baddb7da6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.873
+      value: 1.044
       objectReference: {fileID: 0}
     - target: {fileID: 4458023723049016, guid: 2f747246a56614a40af4a20baddb7da6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.007
+      value: -0.528
       objectReference: {fileID: 0}
     - target: {fileID: 4458023723049016, guid: 2f747246a56614a40af4a20baddb7da6, type: 3}
       propertyPath: m_LocalRotation.w
