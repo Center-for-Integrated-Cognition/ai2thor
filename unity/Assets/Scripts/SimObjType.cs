@@ -272,8 +272,8 @@ public enum SimObjType : int {
     ClothesDryer = 165,
     Doorframe = 166,
     Carrot = 167,
-    RecycleBin = 168,
-    ColaCan = 169
+    Bin = 168,
+    Can = 169
 }
 
 public static class ReceptacleRestrictions {
@@ -301,7 +301,7 @@ public static class ReceptacleRestrictions {
     // receptacle box for the placement to be valid. This means we can have a Spoon placed IN a cup, but the top half of the spoon is still allowed to stick out
     // this distinction is made in case we ever want to do some sort of semantic tests with placing things in/on instead of a generic "place" as the action descriptor
     public static List<SimObjType> InReceptaclesThatOnlyCheckBottomFourCorners = new List<SimObjType>()
-    { SimObjType.Cup, SimObjType.Bowl, SimObjType.GarbageCan, SimObjType.RecycleBin, SimObjType.Sink, SimObjType.BathtubBasin, SimObjType.Pan, SimObjType.Pot, };
+    { SimObjType.Cup, SimObjType.Bowl, SimObjType.GarbageCan, SimObjType.Bin, SimObjType.Sink, SimObjType.BathtubBasin, SimObjType.Pan, SimObjType.Pot, };
 
 
     public static List<SimObjType> SpawnOnlyOutsideReceptacles = new List<SimObjType>()
@@ -315,7 +315,7 @@ public static class ReceptacleRestrictions {
     // this elminiates the need for visibly seeing the bottommost point on the object, which would restrict the valid placement positions greatly due to these objects being viewed at extreme angles
     public static List<SimObjType> ReturnAllPoints = new List<SimObjType>()
     {
-        SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.GarbageCan, SimObjType.RecycleBin, SimObjType.Plate, SimObjType.Box, SimObjType.Drawer, SimObjType.Mug, SimObjType.Cup,
+        SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.GarbageCan, SimObjType.Bin, SimObjType.Plate, SimObjType.Box, SimObjType.Drawer, SimObjType.Mug, SimObjType.Cup,
     };
 
     // These receptacle sim objects MUST be in the open state before objects can be placed in them
@@ -330,7 +330,7 @@ public static class ReceptacleRestrictions {
     {
         SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Plate, SimObjType.Bread, SimObjType.Cup, SimObjType.Mug, SimObjType.Laptop,
         SimObjType.SaltShaker, SimObjType.PepperShaker, SimObjType.AlarmClock, SimObjType.Box, SimObjType.SoapBottle, SimObjType.SoapBottleFilled, SimObjType.Kettle,
-        SimObjType.Bottle, SimObjType.ColaCan, SimObjType.CreditCard, SimObjType.RemoteControl, SimObjType.Candle, SimObjType.SprayBottle, SimObjType.Statue, SimObjType.Vase,
+        SimObjType.Bottle, SimObjType.Can, SimObjType.CreditCard, SimObjType.RemoteControl, SimObjType.Candle, SimObjType.SprayBottle, SimObjType.Statue, SimObjType.Vase,
         SimObjType.KeyChain, SimObjType.CD, SimObjType.Book, SimObjType.EggCracked, SimObjType.Dumbbell, SimObjType.TableTopDecor
     };
 
@@ -434,7 +434,7 @@ public static class ReceptacleRestrictions {
          }},
 
         // COLA CAN
-		{SimObjType.ColaCan, new List<SimObjType>()
+		{SimObjType.Can, new List<SimObjType>()
         {SimObjType.Fridge, SimObjType.Box, SimObjType.Dresser, SimObjType.Desk, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
          SimObjType.CounterTop, SimObjType.Shelf, SimObjType.GarbageCan,
         }},
