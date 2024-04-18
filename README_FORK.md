@@ -89,7 +89,7 @@ Now you can build using this command in the terminal:
 
     invoke local-build --arch=Linux64 --no-batchmode
 
-This launches a Unity GUI with a progress bar while building the project. On a fresh checkout this might take 30 minutes. On a pre-existing project (as should be the case on the CALM machine!) this should be much faster.
+This launches a Unity GUI with a progress bar while building the project. On a fresh checkout this might take 30 minutes. On a pre-existing project (as should be the case on the CALM machine!) this should be much faster. TODO: there is a `--scenes scene1,scene2,scene3...` for only compiling certain scenes (which would greatly speed up the build), but it seems to cause the controller startup to freeze with a closeup of the fridge.
 
 To monitor the build process in more detail, you may wish to open a separate terminal and tail the build log, which is output in the project root directory:
 
