@@ -605,6 +605,28 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 14653866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &14804341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139369987974484, guid: 28c8a978667ecf448a7e1b98dce49b46,
+    type: 3}
+  m_PrefabInstance: {fileID: 1617229951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &14804342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14804341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d106cf009583a40e4a85d860c9830f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialSwapObjects: []
+  ObjectsToEnableIfClean: []
+  ObjectsToEnableIfDirty: []
+  isDirty: 0
 --- !u!1 &15389514
 GameObject:
   m_ObjectHideFlags: 0
@@ -46079,6 +46101,21 @@ PrefabInstance:
     - target: {fileID: 4173611857597516, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -45.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: objectID
+      value: Potato|-01.82|+00.94|-00.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
