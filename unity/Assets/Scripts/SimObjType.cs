@@ -273,7 +273,8 @@ public enum SimObjType : int {
     Doorframe = 166,
     Carrot = 167,
     Bin = 168,
-    Can = 169
+    Can = 169,
+    CarrotSliced = 170
 }
 
 public static class ReceptacleRestrictions {
@@ -412,6 +413,11 @@ public static class ReceptacleRestrictions {
 
         // CARROT
 		{SimObjType.Carrot, new List<SimObjType>()
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
+
+        // CARROT SLICED
+		{SimObjType.CarrotSliced, new List<SimObjType>()
         {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
          SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
 
