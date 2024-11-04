@@ -24084,7 +24084,7 @@ PrefabInstance:
     - target: {fileID: 1601922801, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
       propertyPath: ObjectToChangeTo
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 10eca4781a6826f4e96fc0a2590c4801,
+      objectReference: {fileID: 1418554155335435857, guid: 31d82bb093512c0499c1cec97ce6f080,
         type: 3}
     - target: {fileID: 1601922803, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
       propertyPath: isCooked
@@ -59116,7 +59116,7 @@ PrefabInstance:
     - target: {fileID: 1601922801, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
       propertyPath: ObjectToChangeTo
       value: 
-      objectReference: {fileID: 919132149155446097, guid: 10eca4781a6826f4e96fc0a2590c4801,
+      objectReference: {fileID: 1418554155335435857, guid: 31d82bb093512c0499c1cec97ce6f080,
         type: 3}
     - target: {fileID: 1601922803, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
       propertyPath: isCooked
