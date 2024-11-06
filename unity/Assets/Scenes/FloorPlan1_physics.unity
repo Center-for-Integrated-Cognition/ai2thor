@@ -24244,6 +24244,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: a21424e321929874d8fa0478101173f8, type: 3}
+    - target: {fileID: 54925709273384324, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65214483688039484, guid: 28c8a978667ecf448a7e1b98dce49b46,
         type: 3}
       propertyPath: m_Size.x
