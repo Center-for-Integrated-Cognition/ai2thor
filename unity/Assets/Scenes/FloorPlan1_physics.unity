@@ -6297,6 +6297,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -45.000004
       objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: objectID
+      value: Potato|-01.59|+00.80|+00.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
 --- !u!4 &174381468 stripped
@@ -6410,6 +6425,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 726572473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &180744524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180744522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d106cf009583a40e4a85d860c9830f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialSwapObjects: []
+  ObjectsToEnableIfClean: []
+  ObjectsToEnableIfDirty: []
+  isDirty: 0
 --- !u!114 &180744525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
@@ -23994,6 +24025,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -45.000004
       objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: objectID
+      value: Potato|-01.66|+00.93|-02.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114268142941281028, guid: 28c8a978667ecf448a7e1b98dce49b46,
+        type: 3}
+      propertyPath: SecondaryProperties.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c8a978667ecf448a7e1b98dce49b46, type: 3}
 --- !u!54 &726572474 stripped
@@ -39858,6 +39904,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6e7abbc03fe4393b34fb96d7478c77, type: 3}
+--- !u!1 &1291138729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139369987974484, guid: 28c8a978667ecf448a7e1b98dce49b46,
+    type: 3}
+  m_PrefabInstance: {fileID: 174381467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1291138730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291138729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d106cf009583a40e4a85d860c9830f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialSwapObjects: []
+  ObjectsToEnableIfClean: []
+  ObjectsToEnableIfDirty: []
+  isDirty: 1
 --- !u!1 &1293596185
 GameObject:
   m_ObjectHideFlags: 0
