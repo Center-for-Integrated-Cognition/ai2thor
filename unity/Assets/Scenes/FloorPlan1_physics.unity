@@ -6320,6 +6320,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 174381467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &174381469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1923452831800252, guid: 28c8a978667ecf448a7e1b98dce49b46,
+    type: 3}
+  m_PrefabInstance: {fileID: 174381467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &174891903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,7 +6443,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d106cf009583a40e4a85d860c9830f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialSwapObjects: []
+  MaterialSwapObjects:
+  - MyObject: {fileID: 726572475}
+    OnMaterials:
+    - {fileID: 2100000, guid: 72d6144882e86cf4a8ef97a619a8de05, type: 2}
+    OffMaterials:
+    - {fileID: 2100000, guid: e3a3bad01717c410c8af71996e7d2bb8, type: 2}
   ObjectsToEnableIfClean: []
   ObjectsToEnableIfDirty: []
   isDirty: 0
@@ -24048,6 +24059,12 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 726572473}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &726572475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1923452831800252, guid: 28c8a978667ecf448a7e1b98dce49b46,
+    type: 3}
+  m_PrefabInstance: {fileID: 726572473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731925406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1170333579371094, guid: 6877aba5a696347dbb6c01f851f2da28,
@@ -39922,7 +39939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d106cf009583a40e4a85d860c9830f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialSwapObjects: []
+  MaterialSwapObjects:
+  - MyObject: {fileID: 174381469}
+    OnMaterials:
+    - {fileID: 2100000, guid: 72d6144882e86cf4a8ef97a619a8de05, type: 2}
+    OffMaterials:
+    - {fileID: 2100000, guid: e3a3bad01717c410c8af71996e7d2bb8, type: 2}
   ObjectsToEnableIfClean: []
   ObjectsToEnableIfDirty: []
   isDirty: 1
