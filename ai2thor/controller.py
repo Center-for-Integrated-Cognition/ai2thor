@@ -1142,9 +1142,13 @@ class Controller(object):
         # print("Viewer: http://%s:%s/viewer" % (host, port))
 
         command = self.unity_command(width, height, self.headless)
+        launch_env = self._build.platform.launch_env(self.width, self.height, self.x_display)
         env.update(
-            self._build.platform.launch_env(self.width, self.height, self.x_display)
+            launch_env
         )
+        logger.debug("Running Unity command: %s" % command)
+        logger.debug("Updating environment for Unity command with: %s" % launch_env)
+        logger.debug("Full Unity command environment: %s" % env)
 
         makedirs(self.log_dir)
         extra_args={}
