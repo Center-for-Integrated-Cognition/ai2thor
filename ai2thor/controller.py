@@ -1128,6 +1128,8 @@ class Controller(object):
 
             command += f" -force-device-index {cuda_vulkan_mapping[self.gpu_device]}"
 
+        if platform_system() == 'Windows':
+            command = command.replace("\\","/")
         return shlex.split(command)
 
     def _start_unity_thread(self, env, width, height, server_params, image_name):
