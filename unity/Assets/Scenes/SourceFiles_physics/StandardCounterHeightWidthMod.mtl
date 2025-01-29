@@ -1,0 +1,9 @@
+newmtl LightWhite
+map_Kd TexturesCom_MarbleNoisy0062_1_seamless_S.png
+Kd 0.8897059 0.8897059 0.8897059
+d 1
+
+newmtl WhiteWoodClean
+Kd 1 1 1
+d 1
+
