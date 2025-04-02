@@ -32,10 +32,11 @@ public class SimObj : MonoBehaviour, SimpleSimObj {
 
     public SimObjType Type = SimObjType.Undefined;
     public SimObjManipType Manipulation = SimObjManipType.Inventory;
-    public static SimObjType[] OpenableTypes = new SimObjType[] { SimObjType.Fridge, SimObjType.Cabinet, SimObjType.Microwave, SimObjType.LightSwitch, SimObjType.Blinds, SimObjType.Book, SimObjType.Toilet };
+    public static SimObjType[] OpenableTypes = new SimObjType[] { SimObjType.Fridge, SimObjType.Cabinet, SimObjType.Microwave, SimObjType.Dishwasher, SimObjType.LightSwitch, SimObjType.Blinds, SimObjType.Book, SimObjType.Toilet };
     public static SimObjType[] ImmobileTypes = new SimObjType[] { SimObjType.Chair, SimObjType.Toaster, SimObjType.CoffeeMachine, SimObjType.Television, SimObjType.StoveKnob };
     private static Dictionary<SimObjType, Dictionary<string, int>> OPEN_CLOSE_STATES = new Dictionary<SimObjType, Dictionary<string, int>>{
         {SimObjType.Microwave, new Dictionary<string, int>{{"open", 2}, {"close", 1}}},
+        {SimObjType.Dishwasher, new Dictionary<string, int>{{"open", 2}, {"close", 1}}},
         {SimObjType.Laptop, new Dictionary<string, int>{{"open", 2}, {"close", 1}}},
         {SimObjType.Book, new Dictionary<string, int>{{"open", 1}, {"close", 2}}},
         {SimObjType.Toilet, new Dictionary<string, int>{{"open", 2}, {"close", 3}}},

@@ -274,7 +274,8 @@ public enum SimObjType : int {
     Carrot = 167,
     Bin = 168,
     Can = 169,
-    CarrotSliced = 170
+    CarrotSliced = 170,
+    Dishwasher = 171
 }
 
 public static class ReceptacleRestrictions {
@@ -288,7 +289,7 @@ public static class ReceptacleRestrictions {
     // Objects are "placed into/placed in" these receptacles
     // The object placed must have the entirety of it's object oriented bounding box (all 8 corners) enclosed within the Receptacle's Box
     public static List<SimObjType> InReceptacles = new List<SimObjType>()
-    {SimObjType.Drawer, SimObjType.Cabinet, SimObjType.Fridge, SimObjType.Microwave, SimObjType.LaundryHamper, SimObjType.Box};
+    {SimObjType.Drawer, SimObjType.Cabinet, SimObjType.Fridge, SimObjType.Microwave, SimObjType.Dishwasher, SimObjType.LaundryHamper, SimObjType.Box};
 
     // Objects are "placed on top of/placed on" these receptacles
     // the object placed only needs the bottom most 4 corners within the Receptacle Box to be placed validly, this allows
@@ -322,7 +323,7 @@ public static class ReceptacleRestrictions {
     // These receptacle sim objects MUST be in the open state before objects can be placed in them
     public static List<SimObjType> MustBeOpenToPlaceObjectsIn = new List<SimObjType>()
     {
-        SimObjType.Drawer, SimObjType.Cabinet, SimObjType.LaundryHamper, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Box
+        SimObjType.Drawer, SimObjType.Cabinet, SimObjType.LaundryHamper, SimObjType.Dishwasher, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Box
     };
 
     // these objects should always be placed upright and not in weird angles. For example, you wouldn't place a pot sideways, you would always place
@@ -452,7 +453,7 @@ public static class ReceptacleRestrictions {
 
 		// CUP
 		{SimObjType.Cup, new List<SimObjType>()
-        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.Dresser, SimObjType.Desk, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
+        {SimObjType.Microwave, SimObjType.Dishwasher, SimObjType.Fridge, SimObjType.Dresser, SimObjType.Desk, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
          SimObjType.CounterTop, SimObjType.Shelf }}, // might want to add this to coffee machines later, but right now they don't fit, only mugs were created to fit coffee machines initially
 
 		// DISH SPONGE
@@ -472,7 +473,7 @@ public static class ReceptacleRestrictions {
 
 		// FORK
 		{SimObjType.Fork, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Mug, SimObjType.Plate, SimObjType.Cup, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Dishwasher, SimObjType.Bowl, SimObjType.Mug, SimObjType.Plate, SimObjType.Cup, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
          SimObjType.CounterTop, SimObjType.Drawer,}},
 
 		// HAND TOWEL- small hand towel
@@ -490,7 +491,7 @@ public static class ReceptacleRestrictions {
 
 		// KNIFE - Big chef's knife
 		{SimObjType.Knife, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Mug, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Drawer, }},
+        {SimObjType.Pot, SimObjType.Dishwasher, SimObjType.Pan, SimObjType.Bowl, SimObjType.Mug, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Drawer, }},
 
 		// LADLE
 		{SimObjType.Ladle, new List<SimObjType>()
@@ -511,7 +512,7 @@ public static class ReceptacleRestrictions {
 
 		// MUG
 		{SimObjType.Mug, new List<SimObjType>()
-        {SimObjType.CoffeeMachine, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Box, SimObjType.Dresser, SimObjType.Desk, SimObjType.Cart, SimObjType.Sink,
+        {SimObjType.CoffeeMachine, SimObjType.Dishwasher, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Box, SimObjType.Dresser, SimObjType.Desk, SimObjType.Cart, SimObjType.Sink,
          SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Shelf,
         }},
 
@@ -523,7 +524,7 @@ public static class ReceptacleRestrictions {
 
 		// PAN
 		{SimObjType.Pan, new List<SimObjType>()
-        {SimObjType.DiningTable, SimObjType.CounterTop, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.StoveBurner, SimObjType.Fridge}},
+        {SimObjType.DiningTable, SimObjType.Dishwasher, SimObjType.CounterTop, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.StoveBurner, SimObjType.Fridge}},
 
 		// PAPER TOWEL
 		{SimObjType.PaperTowelRoll, new List<SimObjType>()
