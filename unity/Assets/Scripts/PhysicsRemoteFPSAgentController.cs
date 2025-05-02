@@ -4684,6 +4684,30 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             bool simplifyPhysics = false,
             float? moveMagnitude = null // moveMagnitude is supported for backwards compatibility. It's new name is 'openness'.
         ) {
+
+            // Try to address dishwasher
+            if (target.ObjType == SimObjType.Dishwasher) {
+                Int32 ocount = target.ReceptacleObjectIds.Count;
+                Int32 oind = 0;
+                Int32 isDone = 0;
+                SimObjPhysics myobj = null;
+                string sobj = null;
+                isDone = target.GetComponent<DwashTimer>().DWDone;
+
+                if (isDone == 1) {
+                    for(oind =0; oind < ocount; oind++) {
+                        sobj = target.ReceptacleObjectIds[oind];
+                        myobj = target.SimObjectsContainedByReceptacle[oind];
+                        if (myobj.IsDirtyable) {
+                            if (myobj.IsDirty) {
+                                ServerAction MyAction = new ServerAction();
+                                MyAction.objectId= target.ReceptacleObjectIds[oind];
+                                CleanObject(MyAction);
+                            }
+                        }
+                    }
+                }
+            }
             // backwards compatibility support
             if (moveMagnitude != null) {
                 // Previously, when moveMagnitude==0, that meant full openness, since the default float was 0.
