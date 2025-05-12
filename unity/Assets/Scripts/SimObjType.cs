@@ -560,7 +560,7 @@ public static class ReceptacleRestrictions {
 
 		// POT
 		{SimObjType.Pot, new List<SimObjType>()
-        {SimObjType.StoveBurner, SimObjType.Fridge, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Shelf}},
+        {SimObjType.StoveBurner, SimObjType.Fridge, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.Dishwasher, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Shelf}},
 
 		// POTATO
 		{SimObjType.Potato, new List<SimObjType>()

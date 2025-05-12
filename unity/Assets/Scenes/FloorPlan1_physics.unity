@@ -66124,7 +66124,7 @@ MonoBehaviour:
   - {x: -180, y: 0, z: 0}
   animationTime: 0.2
   triggerEnabled: 1
-  currentOpenness: 1
+  currentOpenness: 0
   IgnoreTheseObjects: []
   isOpen: 0
   movementType: 1

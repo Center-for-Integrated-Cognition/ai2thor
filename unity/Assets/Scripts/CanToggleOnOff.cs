@@ -72,8 +72,8 @@ public class CanToggleOnOff : MonoBehaviour {
     protected MovementType movementType;
 
     // keep a list of all objects that can turn on, but must be in the closed state before turning on (ie: can't microwave an object with the door open!)
-    protected List<SimObjType> MustBeClosedToTurnOn = new List<SimObjType>()
-    {SimObjType.Microwave};
+    private List<SimObjType> mustBeClosedToTurnOn = new List<SimObjType>()
+    {SimObjType.Microwave, SimObjType.Dishwasher};
 
     // if this object controls the on/off state of ONLY itself, set to true (lamps, laptops, etc.)
     // if this object's on/off state is not controlled by itself, but instead controlled by another sim object (ex: stove burner is controlled by the stove knob) set this to false
@@ -83,6 +83,8 @@ public class CanToggleOnOff : MonoBehaviour {
     // reference to any sim objects that this object will turn on/off by proxy (ie: stove burner knob will toggle on/off state of its stove burner)
     [SerializeField]
     protected SimObjPhysics[] ControlledSimObjects;
+
+    protected List<SimObjType> MustBeClosedToTurnOn { get => mustBeClosedToTurnOn; set => mustBeClosedToTurnOn = value; }
 
     // return this for metadata check to see if this object is Toggleable or not
     // specifically, stove burners should not be Toggleable, but they can return 'isToggled' because they can be Toggled on by

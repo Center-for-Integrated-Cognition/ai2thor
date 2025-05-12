@@ -58,7 +58,7 @@ public class CanOpen_Object : MonoBehaviour {
 
     // keep a list of all objects that, if able to turn on/off, must be in the Off state before opening (no opening microwave unless it's off!);
     private List<SimObjType> MustBeOffToOpen = new List<SimObjType>()
-    {SimObjType.Microwave};
+    {SimObjType.Microwave, SimObjType.Dishwasher};
 
     //[Header("References for the Open or Closed bounding box for openable and pickupable objects")]
     //// the bounding box to use when this object is in the open state
