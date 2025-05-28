@@ -3800,9 +3800,17 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             }
 
             bool placeUpright = false;
+
+            bool nPlaceUpright = false;
             // check if the object should be forced to only check upright placement angles (this prevents things like Pots being placed sideways)
             if (ReceptacleRestrictions.AlwaysPlaceUpright.Contains(handSOP.ObjType)) {
                 placeUpright = true;
+            }
+
+            if (targetReceptacle.ObjType == SimObjType.Dishwasher) {
+                nPlaceUpright = false;
+            } else {
+                nPlaceUpright = placeUpright;
             }
 
             // ok we are holding something, time to try and place it
@@ -3839,7 +3847,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
                 }
             }
 
-            if (script.PlaceObjectReceptacle(spawnPoints, ItemInHand.GetComponent<SimObjPhysics>(), placeStationary, -1, 90, placeUpright)) {
+            if (script.PlaceObjectReceptacle(spawnPoints, ItemInHand.GetComponent<SimObjPhysics>(), placeStationary, -1, 90, nPlaceUpright)) {
                 ItemInHand = null;
                 DefaultAgentHand();
                 actionFinished(true);
