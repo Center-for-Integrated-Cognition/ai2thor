@@ -194,7 +194,7 @@ class Build(object):
     @property
     def url(self):
         if self.cic_fork:
-            return "https://github.com/Center-for-Integrated-Cognition/ai2thor/releases/download/5.0.0-Windows/ai2thor_windows.zip"
+            return "https://github.com/Center-for-Integrated-Cognition/ai2thor/releases/download/5.0.1-Windows/ai2thor_windows.zip"
         return self._base_url() + os.path.join("builds", self.name + ".zip")
 
     @property
