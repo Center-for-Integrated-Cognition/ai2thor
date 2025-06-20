@@ -236,4 +236,4 @@ class Build(object):
     def sha256(self):
         res = requests.get(self.sha256_url, auth=self.auth(), allow_redirects=True)
         res.raise_for_status()
-        return res.content.decode("ascii")
+        return res.content.decode("ascii").trim()
