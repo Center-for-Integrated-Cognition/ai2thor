@@ -1211,6 +1211,8 @@ class Controller(object):
             env=env,
             stdout=open(os.path.join(self.log_dir, "unity.log"), "a"),
             stderr=open(os.path.join(self.log_dir, "unity.log"), "a"),
+            # prevent SIGINT from bubbling up to our application
+            start_new_session=True,
             **extra_args
         )
 
