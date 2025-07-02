@@ -1205,7 +1205,9 @@ class Controller(object):
         makedirs(self.log_dir)
         extra_args={}
         if os.name == 'nt':
-            extra_args = dict(shell=True)
+            # on Windows, we have to start a new process group to prevent a SIGINT from a 
+            # child process from bubbling up to our application
+            extra_args = dict(shell=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
         self.server.unity_proc = proc = subprocess.Popen(
             command,
             env=env,
