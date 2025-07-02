@@ -1565,11 +1565,6 @@ class Controller(object):
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 # Process already gone - nothing to do
                 pass
-            except (KeyboardInterrupt, SystemExit):
-                # Catch any signals or interrupts that might occur during process termination
-                # and continue with cleanup silently - these are often spurious signals
-                # from subprocess termination
-                pass
 
 
 class BFSSearchPoint:
