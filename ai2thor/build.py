@@ -194,7 +194,7 @@ class Build(object):
     @property
     def url(self):
         if self.cic_fork:
-            return "https://github.com/Center-for-Integrated-Cognition/ai2thor/releases/download/5.0.0-Windows/ai2thor_windows.zip"
+            return "https://github.com/Center-for-Integrated-Cognition/ai2thor/releases/download/5.0.2-Windows/ai2thor_windows.zip"
         return self._base_url() + os.path.join("builds", self.name + ".zip")
 
     @property
@@ -236,4 +236,4 @@ class Build(object):
     def sha256(self):
         res = requests.get(self.sha256_url, auth=self.auth(), allow_redirects=True)
         res.raise_for_status()
-        return res.content.decode("ascii")
+        return res.content.decode("ascii").strip()

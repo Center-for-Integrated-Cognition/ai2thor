@@ -53,7 +53,8 @@ setup(
         "Pillow",
         "python-xlib",
         "opencv-python",
-        "werkzeug==2.1.1"  # Was: >=0.15.0",  # needed for unix socket support
+        "werkzeug==2.1.1",  # Was: >=0.15.0",  # needed for unix socket support
+        "psutil",
     ],
     setup_requires=["pytest-runner"],
     tests_require=["pytest", "pytest-timeout", "pytest-cov", "jsonschema", "shapely", "pytest-mock", "dictdiffer"],

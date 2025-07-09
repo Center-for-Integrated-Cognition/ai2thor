@@ -30,6 +30,7 @@ from platform import system as platform_system
 from typing import Dict, Any, Union, Optional
 
 import numpy as np
+import psutil
 
 import ai2thor.build
 import ai2thor.fifo_server
@@ -1204,7 +1205,9 @@ class Controller(object):
         makedirs(self.log_dir)
         extra_args={}
         if os.name == 'nt':
-            extra_args = dict(shell=True)
+            # on Windows, we have to start a new process group to prevent a SIGINT from a 
+            # child process from bubbling up to our application
+            extra_args = dict(shell=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
         self.server.unity_proc = proc = subprocess.Popen(
             command,
             env=env,
@@ -1529,14 +1532,39 @@ class Controller(object):
         if self.unity_pid and process_alive(self.unity_pid):
             self.killing_unity = True
             proc = self.server.unity_proc
-            for i in range(4):
-                if not process_alive(proc.pid):
-                    break
+
+            try:
+                # On Windows, the Unity process also generates child processes that need to be killed,
+                # so here we terminate the entire process tree.
+                parent = psutil.Process(proc.pid)
+                children = parent.children(recursive=True)
+
+                # Terminate children first
+                for child in children:
+                    try:
+                        child.terminate()
+                    except (psutil.NoSuchProcess, psutil.AccessDenied):
+                        pass
+
+                # Wait for children to terminate, then force kill any remaining
+                if children:
+                    gone, alive = psutil.wait_procs(children, timeout=3)
+                    for p in alive:
+                        try:
+                            p.kill()
+                        except (psutil.NoSuchProcess, psutil.AccessDenied):
+                            pass
+
+                # Finally terminate parent
+                parent.terminate()
                 try:
-                    proc.kill()
-                    proc.wait(1)
-                except subprocess.TimeoutExpired:
-                    pass
+                    parent.wait(timeout=3)
+                except psutil.TimeoutExpired:
+                    parent.kill()
+
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                # Process already gone - nothing to do
+                pass
 
 
 class BFSSearchPoint:
