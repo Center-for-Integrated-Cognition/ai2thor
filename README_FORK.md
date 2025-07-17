@@ -30,22 +30,22 @@ Build the wheel with `invoke build-pip-commit`. Upload that `.whl` file located 
 
 ### Build Unity Project
 
-Build the `unity` subproject via `invoke local-build`. This generates a .zip file.
+Build the `unity` subproject via `invoke local-build --arch=StandaloneWindows64`. This generates a .zip file.
 
 ### Restructure Zip File
 
-Currently we then manually edit the zip to be the expected structure, but we should look into using `invoke ci-build` to properly structure it. Manual steps:
+Currently we then manually edit the zip to be the expected structure, but we should look into using `invoke ci-build` to properly structure it. The easiest way to do this part is to download a previous release's zip and inspect the contents. The manual checks/steps we have had to follow previously were:
 
+* There should be no top-level directory inside of the zip. The zip should directly contain each of the required build files.
 * add metadata.json:
 
 ```json
 {"server_types": ["WSGI", "FIFO"]}
 ```
 
-* There should be no top-level directory inside of the zip. The zip should directly contain each of the required build files.
 * data directory should be named `thor-StandaloneWindows64-<commit hash>_Data`
-* executable should be named `thor-StandaloneWindows64-<commit hash>` (with `.exe` on Windows)
-* If on a Mac, remove the `__MACOSX` directory from the zip file with `zip -d <zip file> __MACOSX/\*` (failing to do so will result in errors when the user downloads the zip).
+* executable should be named `thor-StandaloneWindows64-<commit hash>.exe`
+* If you create the zip file on a Mac, remove the `__MACOSX` directory from the zip file with `zip -d <zip file> __MACOSX/\*` (failing to do so will result in errors when the user downloads the zip).
 * Name the zip file to match the `url` property in `build.py`, which you updated earlier (so probably `ai2thor_windows.zip`).
 * Double-check one more time that the commit hash in the zipped file names matches the commit hash in the wheel name!
 * Upload the .zip file to the new GitHub release.
@@ -70,7 +70,9 @@ def sha256sum(filename):
 
 ### Installing the Windows Build
 
-Users just need to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
+For the THOR-Soar project, you should update the package install URL in the `requirements-Windows.txt` file to point to the new wheel URL. Users should then follow the [instructions](https://github.com/Center-for-Integrated-Cognition/THOR-Soar/blob/main/docs/installation.md#updating-dependencies) in the THOR-Soar repo to update their dependencies. The new ai2thor zip will be downloaded when they next run the THOR-Soar application. You should test this yourself and use the ControllerGUI to move around in the scene to ensure that everything works as expected.
+
+To specifically install the new `ai2thor` release in some other project, users just need to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
 
 ## Working with Unity
 
