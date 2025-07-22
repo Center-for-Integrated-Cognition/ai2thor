@@ -91,9 +91,14 @@ Next you should load the project from Unity Hub. This will do 2 things for you:
 1) It will require you to input your Unity credentials, which will be saved for future use (such as building the project)
 2) It will install the correct version of the Unity editor for the project
 
+> GOTCHA: On my machine (Aaron, Arch-based linux) it would not recognize the credentials. I instead added something to `tasks.py` so you can specity the environment variable `UNITY_HUB_PATH` to where unityhub is installed (for me, `/opt/unityhub/unityhub`). You may need to manually build the project, but it works. 
+
 To load the project, open Unity Hub and open the projects tab. Add the `unity` sub-project found in this repo, then double-click the project name to open the editor.
 
 > GOTCHA: If your project loads with compile errors that have no message or source location, you won't be able to compile it, and I don't know how to fix this. The CALM machine is already set up, so you may wish to use that instead.
+> Aaron: I had this issue, and I looked into the Editor.log (on my machine in ~/.config/unity3d). This shows the error was related to not finding the right ICU (internationalization) library. I wasn't sure how to fix this, but a workaround is to run unity with `export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1`
+
+
 
 ### Building the `unity` Subproject
 

@@ -165,9 +165,12 @@ def _unity_path():
         # TODO: Verify windows unity standalone path
         standalone_path = "C:/PROGRA~1/{}/Editor/Unity.exe".format(unity_version)
     elif sys.platform.startswith("linux"):
-        unity_hub_path = "{}/Unity/Hub/Editor/{}/Editor/Unity".format(
-            os.environ["HOME"], unity_version
-        )
+        if "UNITY_HUB_PATH" in os.environ:
+            unity_hub_path = os.environ["UNITY_HUB_PATH"]
+        else:
+            unity_hub_path = "{}/Unity/Hub/Editor/{}/Editor/Unity".format(
+                os.environ["HOME"], unity_version
+            )
 
     if standalone_path and os.path.exists(standalone_path):
         unity_path = standalone_path
