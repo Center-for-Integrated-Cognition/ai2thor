@@ -70,7 +70,13 @@ def sha256sum(filename):
 
 ### Installing the Windows Build
 
-For the THOR-Soar project, you should update the package install URL in the `requirements-Windows.txt` file to point to the new wheel URL. Users should then follow the [instructions](https://github.com/Center-for-Integrated-Cognition/THOR-Soar/blob/main/docs/installation.md#updating-dependencies) in the THOR-Soar repo to update their dependencies. The new ai2thor zip will be downloaded when they next run the THOR-Soar application. You should test this yourself and use the ControllerGUI to move around in the scene to ensure that everything works as expected.
+For the THOR-Soar project, you should update the package install URL in `connector/requirements-windows.txt` file to point to the new wheel URL. 
+1. Go to [https://github.com/Center-for-Integrated-Cognition/ai2thor]()
+2. Find the Releases section on the right side, and click the latest release
+3. You should see multiple files, including one with a long filename that ends in `.whl`. Right click and *Copy link address*
+4. Replace the link address in the `requirements-windows.txt`
+
+Users should then follow the [instructions](https://github.com/Center-for-Integrated-Cognition/THOR-Soar/blob/main/docs/installation.md#updating-dependencies) in the THOR-Soar repo to update their dependencies. The new ai2thor zip will be downloaded when they next run the THOR-Soar application. You should test this yourself and use the ControllerGUI to move around in the scene to ensure that everything works as expected.
 
 To specifically install the new `ai2thor` release in some other project, users just need to `pip install -f <wheel url>`. When they import AI2THOR for the first time in a running script, it will download and unpack the zip you've created and run the binary.
 
