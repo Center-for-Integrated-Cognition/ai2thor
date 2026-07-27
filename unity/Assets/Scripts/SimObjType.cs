@@ -275,7 +275,12 @@ public enum SimObjType : int {
     RecyclingBin = 168,
     Can = 169,
     CarrotSliced = 170,
-    Dishwasher = 171
+    Dishwasher = 171,
+    ChoppingBoard = 172,
+    ChickenSteak = 173,
+    ChickenSteakSliced = 174,
+    BowlWithCereal = 175,
+    MilkCarton = 176
 }
 
 public static class ReceptacleRestrictions {
@@ -348,12 +353,12 @@ public static class ReceptacleRestrictions {
 		// APPLE
 		{SimObjType.Apple, new List<SimObjType>()
         {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
-         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
 
 		// APPLE SLICED
 		{SimObjType.AppleSliced, new List<SimObjType>()
         {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
-         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
 
 		// BASEBALL BAT
 		{SimObjType.BaseballBat, new List<SimObjType>()
@@ -387,6 +392,12 @@ public static class ReceptacleRestrictions {
          SimObjType.CounterTop, SimObjType.Shelf,
         }},
 
+        // BOWL WITH CEREAL
+		{SimObjType.BowlWithCereal, new List<SimObjType>()
+        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.Dresser, SimObjType.Desk, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
+         SimObjType.CounterTop, SimObjType.Shelf,
+        }},
+
 		// BOX
 		{SimObjType.Box, new List<SimObjType>()
         {SimObjType.Sofa, SimObjType.ArmChair, SimObjType.Dresser, SimObjType.Desk, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Shelf, SimObjType.Ottoman
@@ -395,11 +406,11 @@ public static class ReceptacleRestrictions {
 
 		// BREAD
 		{SimObjType.Bread, new List<SimObjType>()
-        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Plate}},
+        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Plate, SimObjType.ChoppingBoard}},
 
 		// BREAD SLICED
 		{SimObjType.BreadSliced, new List<SimObjType>()
-        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.DiningTable,SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Toaster, SimObjType.Plate}},
+        {SimObjType.Microwave, SimObjType.Fridge, SimObjType.DiningTable,SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Toaster, SimObjType.Plate, SimObjType.ChoppingBoard}},
 
 		// BUTTER KNIFE
 		{SimObjType.ButterKnife, new List<SimObjType>()
@@ -415,12 +426,12 @@ public static class ReceptacleRestrictions {
         // CARROT
 		{SimObjType.Carrot, new List<SimObjType>()
         {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
-         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
 
         // CARROT SLICED
 		{SimObjType.CarrotSliced, new List<SimObjType>()
         {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
-         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
 
 		// CD
 		{SimObjType.CD, new List<SimObjType>()
@@ -432,6 +443,21 @@ public static class ReceptacleRestrictions {
         {SimObjType.Sofa, SimObjType.ArmChair, SimObjType.Box, SimObjType.Ottoman, SimObjType.Dresser, SimObjType.Desk, SimObjType.Bed, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop,
          SimObjType.Shelf, SimObjType.Drawer, SimObjType.Safe, SimObjType.Stool, SimObjType.Chair, SimObjType.Footstool,
          }},
+
+        // CHICKEN STEAK
+		{SimObjType.ChickenSteak, new List<SimObjType>()
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
+
+        // CHICKEN STEAK SLICED
+		{SimObjType.ChickenSteakSliced, new List<SimObjType>()
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser, SimObjType.ChoppingBoard}},
+
+        // CHOPPING BOARD
+        {SimObjType.ChoppingBoard, new List<SimObjType>()
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Desk,
+         SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.Dresser}},
 
 		// CLOTH
 		{SimObjType.Cloth, new List<SimObjType>()
@@ -504,11 +530,17 @@ public static class ReceptacleRestrictions {
 
 		// LETTUCE
 		{SimObjType.Lettuce, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan}},
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.ChoppingBoard}},
 
 		// LETTUCE SLICED
 		{SimObjType.LettuceSliced, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan}},
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.ChoppingBoard}},
+
+        // MILK CARTON
+		{SimObjType.MilkCarton, new List<SimObjType>()
+        {SimObjType.Fridge, SimObjType.Box, SimObjType.Dresser, SimObjType.Desk, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
+         SimObjType.CounterTop, SimObjType.Shelf, SimObjType.GarbageCan,
+        }},
 
 		// MUG
 		{SimObjType.Mug, new List<SimObjType>()
@@ -564,11 +596,12 @@ public static class ReceptacleRestrictions {
 
 		// POTATO
 		{SimObjType.Potato, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan}},
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, 
+        SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.ChoppingBoard}},
 
 		// POTATO SLICED
 		{SimObjType.PotatoSliced, new List<SimObjType>()
-        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan}},
+        {SimObjType.Pot, SimObjType.Pan, SimObjType.Bowl, SimObjType.Microwave, SimObjType.Fridge, SimObjType.Plate, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.GarbageCan, SimObjType.ChoppingBoard}},
 
 		// REMOTE CONTROL
 		{SimObjType.RemoteControl, new List<SimObjType>()
@@ -633,18 +666,18 @@ public static class ReceptacleRestrictions {
 		// TOILET PAPER ROLL - should be same as Toilet Paper's list
 		{SimObjType.ToiletPaperRoll, new List <SimObjType>()
         {SimObjType.Dresser, SimObjType.Desk, SimObjType.Toilet, SimObjType.ToiletPaperHanger, SimObjType.Cart, SimObjType.Bathtub, SimObjType.Cabinet, SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable,
-         SimObjType.CounterTop, SimObjType.Shelf, SimObjType.Drawer, SimObjType.GarbageCan, SimObjType.Stool
+         SimObjType.CounterTop, SimObjType.Shelf, SimObjType.Drawer, SimObjType.GarbageCan, SimObjType.Stool, SimObjType.Chair
         }},
 
 		// TOMATO
 		{SimObjType.Tomato, new List<SimObjType>()
         {SimObjType.DiningTable, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.CounterTop, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Pot,
-         SimObjType.Bowl, SimObjType.Fridge, SimObjType.GarbageCan, SimObjType.Plate}},
+         SimObjType.Bowl, SimObjType.Fridge, SimObjType.GarbageCan, SimObjType.Plate, SimObjType.ChoppingBoard}},
 
 		// TOMATO SLICED
 		{SimObjType.TomatoSliced, new List<SimObjType>()
         {SimObjType.DiningTable, SimObjType.CounterTop, SimObjType.TVStand, SimObjType.CoffeeTable, SimObjType.SideTable, SimObjType.Sink, SimObjType.SinkBasin, SimObjType.Pot,
-         SimObjType.Bowl, SimObjType.Fridge, SimObjType.GarbageCan, SimObjType.Plate}},
+         SimObjType.Bowl, SimObjType.Fridge, SimObjType.GarbageCan, SimObjType.Plate, SimObjType.ChoppingBoard}},
 
 		// TOWEL - large bath towel
 		{SimObjType.Towel, new List<SimObjType>()

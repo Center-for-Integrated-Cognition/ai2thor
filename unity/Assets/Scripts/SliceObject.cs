@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.Rendering;
 using System.IO;
+using System.Runtime.CompilerServices;
+//using System.Diagnostics;  // So I can use Debug
 
 public class SliceObject : MonoBehaviour {
     // prefab that this object should change to when "sliced"
@@ -58,6 +60,30 @@ public class SliceObject : MonoBehaviour {
         if (isSliced == true) {
             return;
         }
+
+        /// Check that object is on the chopping board
+        //float checkDistance = 0.1f;
+        //int surfaceLayer = 8;  // SymObjVisible;
+        //Collider col = gameObject.GetComponent<Collider>();
+        //Vector3 origin = new Vector3(col.bounds.center.x, col.bounds.min.y + 0.05f, col.bounds.center.z); 
+        /// Cast a ray straight down 
+        //if (Physics.Raycast(origin, Vector3.down, out RaycastHit hit, checkDistance + 0.05f, surfaceLayer))
+        //    { Debug.Log("Object is resting on: " + hit.collider.name); 
+        // Check that resting object is ChoppingBoard
+        //    } else
+        //{
+        //    Debug.Log("Object is NOT resting on anything!!");
+        //}
+
+        //GameObject Board = GameObject.Find("ChoppingBoard");
+        //if (Board == null)
+        //{
+        //    Debug.Log("Chopping Board not found");
+        //    return;
+        //} else
+        //{
+        //    Debug.Log("Object:"+Board.name+" is found!");
+        //}
 
         // Disable this game object and spawn in the broken pieces
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();

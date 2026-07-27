@@ -15,6 +15,9 @@ public class Fill : MonoBehaviour {
     protected GameObject WineObject = null;
 
     [SerializeField]
+    protected GameObject MilkObject = null;
+
+    [SerializeField]
     protected bool isFilled = false; // false - empty, true - currently filled with
 
     protected string currentlyFilledWith = null;
@@ -39,6 +42,7 @@ public class Fill : MonoBehaviour {
         Liquids.Add("water", WaterObject);
         Liquids.Add("coffee", CoffeeObject);
         Liquids.Add("wine", WineObject);
+        Liquids.Add("milk", MilkObject);
     }
 
     // Update is called once per frame
@@ -64,6 +68,9 @@ public class Fill : MonoBehaviour {
                 break;
             case 3:
                 FillObject("coffee");
+                break;
+            case 4:
+                FillObject("milk");
                 break;
         }
     }
