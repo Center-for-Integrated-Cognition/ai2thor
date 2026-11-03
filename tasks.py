@@ -1868,7 +1868,7 @@ def inspect_depth(
     import glob
 
     under_prefix = "_" if under_score else ""
-    regex_str = "depth{}(.*)\.png".format(under_prefix)
+    regex_str = "depth{}(.*)\\.png".format(under_prefix)
 
     def sort_key_function(name):
         split_name = name.split("/")
@@ -2718,7 +2718,7 @@ def create_robothor_dataset(
                         )
 
                 if minimum_path_length > eps and rotation_allowed:
-                    m = re.search("FloorPlan_([a-zA-Z\-]*)([0-9]+)_([0-9]+)", scene)
+                    m = re.search("FloorPlan_([a-zA-Z\\-]*)([0-9]+)_([0-9]+)", scene)
                     point_id = "{}_{}_{}_{}_{}".format(
                         m.group(1), m.group(2), m.group(3), object_type, counter
                     )
@@ -2774,7 +2774,7 @@ def create_robothor_dataset(
             os.makedirs(intermediate_directory)
 
     def key_sort_func(scene_name):
-        m = re.search("FloorPlan_([a-zA-Z\-]*)([0-9]+)_([0-9]+)", scene_name)
+        m = re.search("FloorPlan_([a-zA-Z\\-]*)([0-9]+)_([0-9]+)", scene_name)
         return m.group(1), int(m.group(2)), int(m.group(3))
 
     scenes = sorted(
@@ -2933,7 +2933,7 @@ def filter_dataset(ctx, filename, output_filename, ids=False):
             current_scene = o["scene"]
             current_object_type = o["object_type"]
 
-        m = re.search("FloorPlan_([a-zA-Z\-]*)([0-9]+)_([0-9]+)", o["scene"])
+        m = re.search("FloorPlan_([a-zA-Z\\-]*)([0-9]+)_([0-9]+)", o["scene"])
         point_id = "{}_{}_{}_{}_{}".format(
             m.group(1), m.group(2), m.group(3), o["object_type"], counter
         )
@@ -3201,7 +3201,7 @@ def fill_in_dataset(
     dataset_path = os.path.join(dataset_dir, dataset_filename)
 
     def key_sort_func(scene_name):
-        m = re.search("FloorPlan_([a-zA-Z\-]*)([0-9]+)_([0-9]+)", scene_name)
+        m = re.search("FloorPlan_([a-zA-Z\\-]*)([0-9]+)_([0-9]+)", scene_name)
         return m.group(1), int(m.group(2)), int(m.group(3))
 
     targets = [
@@ -3367,7 +3367,7 @@ def resort_dataset(ctx, dataset_path, output_path, editor_mode=False, local_buil
             else:
                 level = "hard"
             sorted_datapoints[i]["difficulty"] = level
-            m = re.search("FloorPlan_([a-zA-Z\-]*)([0-9]+)_([0-9]+)", obj["scene"])
+            m = re.search("FloorPlan_([a-zA-Z\\-]*)([0-9]+)_([0-9]+)", obj["scene"])
             point_id = "{}_{}_{}_{}_{}".format(
                 m.group(1), m.group(2), m.group(3), obj["object_type"], i
             )
@@ -3744,7 +3744,7 @@ def install_unity_editor(context, version=None, changeset=None):
             os.path.expanduser("~"), "local/bin/UnityHub.AppImage"
         )
     elif sys.platform.startswith("darwin"):
-        unity_hub_path = "/Applications/Unity\ Hub.app/Contents/MacOS/Unity\ Hub --"
+        unity_hub_path = "/Applications/Unity/ Hub.app/Contents/MacOS/Unity/ Hub --"
     else:
         raise Exception("UnityHub CLI not supported")
 
