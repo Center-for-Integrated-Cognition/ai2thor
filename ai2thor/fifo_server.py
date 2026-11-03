@@ -152,8 +152,8 @@ class FifoServer(ai2thor.server.Server):
                 returncode = self.unity_proc.returncode
                 message = (
                     "Unity process has exited - check "
-                    "~/.config/unity3d/Allen\ Institute\ for\ "
-                    "Artificial\ Intelligence/AI2-THOR/Player.log for errors. "
+                    "~/.config/unity3d/Allen/ Institute/ for/ "
+                    "Artificial/ Intelligence/AI2-THOR/Player.log for errors. "
                     f"Last action message: %s, returncode=%s"
                     % (self._last_action_message, self.unity_proc.returncode)
                 )
